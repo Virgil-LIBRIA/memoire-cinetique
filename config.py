@@ -3,6 +3,10 @@ Mémoire Cinétique — Configuration Mem0 locale
 Tout tourne sur Ollama, zéro cloud, zéro API payante.
 """
 
+import os
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+
 MEM0_CONFIG = {
     "llm": {
         "provider": "ollama",
@@ -24,7 +28,7 @@ MEM0_CONFIG = {
         "provider": "qdrant",
         "config": {
             "collection_name": "memoire_cinetique",
-            "path": "C:/Users/VISION/Documents/Projets/memoire_cinetique/qdrant_data",
+            "path": os.path.join(_HERE, "qdrant_data"),
             "embedding_model_dims": 768,
         }
     },
